@@ -1,0 +1,25 @@
+vim ~/test.sh
+
+bash ~/test.sh
+
+find . -name "*ft*.c" -exec norminette -R CheckForbiddenSourceHeader {} \;
+
+find . -name "*ft*.h" -exec norminette -R CheckDefine {} \;
+
+norminette -R CheckForbiddenSourceHeader
+
+ 
+c ft_print_memory.c main.c  && ./a.out | cat -e 
+
+gcc -Wall -Wextra -Werror ft_print_memory.c main.c  && ./a.out
+
+find . -type f \( -name "a.out" -o -name "main.c" \) -print -delete
+
+find . -type f -print
+
+find . -name "*ft*.c" -exec cat {} \; | grep  'include'
+
+gcc -Wall -Wextra -Werror *.c *.h  && ./a.out "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2" | cat -e
+
+<(gcc ./piscinedougs/c07/ex05/ft* ./piscine/c07/ex05/main.c  -o a05.out && ./a05.out) <(gcc ./piscine/c07/ex05/ft* ./piscine/c07/ex05/main.c -o b05.out && ./b05.out)
+ 
